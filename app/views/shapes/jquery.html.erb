@@ -1,0 +1,177 @@
+
+<head>
+
+<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+<style type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+#rectangle {
+	width: auto;
+	height: 500px;
+	background: red;
+  opacity: .8;
+	padding: 40px;
+
+}
+.big {
+	font-size: 50px;
+	height: 700px;
+}
+.form {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	display:flex;
+	justify-content:center;
+    top:20%;
+		left: 30px;
+    border: 1px dashed black;
+		width: 50%;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+}
+
+form {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 25px;
+
+  line-height: 24px;
+
+  color: black;
+  text-decoration: bold;
+  padding: 30px;
+	color: red;
+}
+
+
+input[type="submit"]{
+  background: white;
+  border: 4px solid black;
+  padding: 5px;
+}
+
+.skew::-webkit-scrollbar {
+    display: none;
+}
+
+.center {
+    position: relative;
+    margin: auto;
+    width: 50%;
+    border: 1px dashed black;
+    padding: 50px;
+    top: 10px;
+}
+.skew {
+  transform: matrix3d(1,0,0,0,0.00,0,0.002, 0,0,-0.02,1,0,5,0,0,1);
+-webkit-transform: matrix3d(1,0,0,0,0.00,1,0.002,0,0,-0.02,1,0,5,0,0,1);
+/*transform: matrix3d(1,0,0,<%=@shape.skew_1 * 0.0001%>,0.00,<%=@shape.skew_1 * 0.3%>,0.002, <%=@shape.skew_1 * @unit%>,0,-0.02,1,0,5,0,0,1);
+-webkit-transform: matrix3d(1,0,0,<%=(@shape.skew_1**2) * 0.0001%>,0.00,1,0.002,<%=@shape.skew_1 * 0.0002%>,0,-0.02,1,0,5,0,0,1);*/
+	overflow: scroll;
+	height: 700px;
+
+}
+
+.skew :hover {
+  transform-origin: 6 center 700px;
+transition: all 0.2s ease-o 1s;
+-webkit-transform-origin: 6 center 700px;
+-webkit-transition: all 0.2s ease-o 1s;
+}
+</style>
+
+</head>
+<body>
+
+<div class="center">
+  <div id="rectangle" class="skew">
+    <!-- <img src="http://findicons.com/files/icons/750/aquanox_mini/256/globe.png" /> -->
+		<h1>gettysburg address</h1>
+		<p>
+      Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that government of the people, by the people, for the people, shall not perish from the earth.
+    </p>
+		<h1>2nd inauguration address</h1>
+		<p>
+			AT this second appearing to take the oath of the Presidential office there is less occasion for an extended address than there was at the first. Then a statement somewhat in detail of a course to be pursued seemed fitting and proper. Now, at the expiration of four years, during which public declarations have been constantly called forth on every point and phase of the great contest which still absorbs the attention and engrosses the energies of the nation, little that is new could be presented. The progress of our arms, upon which all else chiefly depends, is as well known to the public as to myself, and it is, I trust, reasonably satisfactory and encouraging to all. With high hope for the future, no prediction in regard to it is ventured.	   1
+  On the occasion corresponding to this four years ago all thoughts were anxiously directed to an impending civil war. All dreaded it, all sought to avert it. While the inaugural address was being delivered from this place, devoted altogether to saving the Union without war, insurgent agents were in the city seeking to destroy it without war—seeking to dissolve the Union and divide effects by negotiation. Both parties deprecated war, but one of them would make war rather than let the nation survive, and the other would accept war rather than let it perish, and the war came.	2
+  One-eighth of the whole population were colored slaves, not distributed generally over the Union, but localized in the southern part of it. These slaves constituted a peculiar and powerful interest. All knew that this interest was somehow the cause of the war. To strengthen, perpetuate, and extend this interest was the object for which the insurgents would rend the Union even by war, while the Government claimed no right to do more than to restrict the territorial enlargement of it. Neither party expected for the war the magnitude or the duration which it has already attained. Neither anticipated that the cause of the conflict might cease with or even before the conflict itself should cease. Each looked for an easier triumph, and a result less fundamental and astounding. Both read the same Bible and pray to the same God, and each invokes His aid against the other. It may seem strange that any men should dare to ask a just God's assistance in wringing their bread from the sweat of other men's faces, but let us judge not, that we be not judged. The prayers of both could not be answered. That of neither has been answered fully. The Almighty has His own purposes. "Woe unto the world because of offenses; for it must needs be that offenses come, but woe to that man by whom the offense cometh." If we shall suppose that American slavery is one of those offenses which, in the providence of God, must needs come, but which, having continued through His appointed time, He now wills to remove, and that He gives to both North and South this terrible war as the woe due to those by whom the offense came, shall we discern therein any departure from those divine attributes which the believers in a living God always ascribe to Him? Fondly do we hope, fervently do we pray, that this mighty scourge of war may speedily pass away. Yet, if God wills that it continue until all the wealth piled by the bondsman's two hundred and fifty years of unrequited toil shall be sunk, and until every drop of blood drawn with the lash shall be paid by another drawn with the sword, as was said three thousand years ago, so still it must be said "the judgments of the Lord are true and righteous altogether."	3
+  With malice toward none, with charity for all, with firmness in the right as God gives us to see the right, let us strive on to finish the work we are in, to bind up the nation's wounds, to care for him who shall have borne the battle and for his widow and his orphan, to do all which may achieve and cherish a just and lasting peace among ourselves and with all nations.
+		</p>
+  </div>
+
+</div>
+
+<div class='center big'>
+  <div class="form">
+	<%= form_for @shape, url: '/shapes/jquery', method: :post do |f| %>
+		<%=f.label "s.k.e.w. ------- >" %>
+		<%= f.text_field :skew_1 %>
+		<%= f.submit "skew it"%>
+	<% end %>
+	<!-- <%= link_to  %> -->
+	</div>
+</div>
+<script>
+
+// var multiply = 0;
+//
+// function twist() {
+//   var PadWidth = Math.sin(multiply) *.001;
+//   var PadHeight = Math.sin(multiply) *.002;
+//   var PadSkew = Math.sin(multiply) * .002;
+//   multiply = multiply + .001;
+//   $( ".skew" ).css('-webkit-transform','matrix3d(1,'+PadSkew+',0,'+PadSkew+','+PadHeight+',1,'+PadHeight+',0,0,0,1,0,5,0,0,1)');
+// }
+//
+// setInterval(function(){
+// twist();
+// }, 1);
+// var colorR = 0
+// var colorG = 0
+// var colorB = 0
+//
+// function color_twist() {
+//   var Red = Math.abs(parseInt((Math.sin(colorR) * 300)));
+//   var Green = Math.abs(parseInt((Math.sin(colorG**2) * 30)));
+//   var Blue = Math.abs(parseInt((Math.sin(colorB*2) * 30)));
+//   colorR = colorR + .001;
+//   colorG = colorG + .002;
+//   colorB = colorB + .004;
+//
+//   $( "#skew" ).css('color','rgb('+Red+','+Green+','+Blue+')');
+// }
+//
+// setInterval(function(){
+// color_twist();
+// }, 1);
+
+$( "body" ).mousemove(function( event ) {
+  var PadWidth = -event.pageX * <%=@shape.skew_1 * 0.0000001%>;
+  var PadHeight = -(event.pageY +500) * (event.pageX -500)* <%=@shape.skew_1 * 0.0000000001%>
+
+  ;
+  var PadSkew = (event.pageY -700)  * <%=@shape.skew_1 * 0.0000001%>;
+  console.log(PadHeight)
+  $( ".skew" ).css('-webkit-transform','matrix3d(1,'+(Math.sin(PadHeight))+',0,'+PadSkew+',0.00,1,0.002,'+PadHeight+',0,-0.02,1,'+PadHeight+',5,0,0,1)');
+});
+
+$( "body" ).mousemove(function( event ) {
+  var PadSkewM = (event.pageY*event.pageX*.000003) + 50 - (event.pageY*.002) - (event.pageX**2 *.0000002);
+  var PadSkewT = (event.pageY *.1);
+  $( ".center" ).css('width', PadSkewM + '%');
+  $( ".center" ).css('top', PadSkewT + 'px');
+});
+/*transform: matrix3d(1,0,0,<%=@shape.skew_1 * 0.0001%>,0.00,<%=@shape.skew_1 * 0.3%>,0.002, <%=@shape.skew_1 * @unit%>,0,-0.02,1,0,5,0,0,1);
+-webkit-transform: matrix3d(1,0,0,<%=(@shape.skew_1**2) * 0.0001%>,0.00,1,0.002,<%=@shape.skew_1 * 0.0002%>,0,-0.02,1,0,5,0,0,1);*/
+</script>
+
+</body>
