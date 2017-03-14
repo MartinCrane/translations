@@ -112,7 +112,7 @@ But, in a larger sense, we can not dedicate—we can not consecrate—we can not
 
 <div class='center big'>
   <div class="form">
-	<%= form_for @shape, url: '/shapes/mousefloat', method: :post do |f| %>
+	<%= form_for @shape, url: '/shapes/float', method: :post do |f| %>
 		<%=f.label "s.k.e.w. ------- >" %>
 		<%= f.text_field :skew_1 %>
 		<%= f.submit "skew it"%>
@@ -122,26 +122,39 @@ But, in a larger sense, we can not dedicate—we can not consecrate—we can not
 </div>
 <script>
 
+var multiply = 0;
+
+function twist() {
+  var PadWidth = Math.sin(multiply) * <%= @shape.skew_1 %> * .0001 ;
+  var PadHeight = Math.sin(multiply) * <%= @shape.skew_1 %> * .0002 ;
+  var PadSkew = Math.sin(multiply) * <%= @shape.skew_1 %> * .0002;
+  multiply = multiply + .001;
+  $( ".skew" ).css('-webkit-transform','matrix3d(1,'+PadSkew+',0,'+PadSkew+','+PadHeight+',1,'+PadHeight+',0,0,0,1,0,5,0,0,1)');
+}
+
+setInterval(function(){
+twist();
+}, 1);
+var colorR = 0
+var colorG = 0
+var colorB = 0
+
+function color_twist() {
+  var Red = Math.abs(parseInt((Math.sin(colorR) * 300)));
+  var Green = Math.abs(parseInt((Math.sin(colorG**2) * 30)));
+  var Blue = Math.abs(parseInt((Math.sin(colorB*2) * 30)));
+  colorR = colorR + .001;
+  colorG = colorG + .002;
+  colorB = colorB + .004;
+
+  $( "#skew" ).css('color','rgb('+Red+','+Green+','+Blue+')');
+}
+
+setInterval(function(){
+color_twist();
+}, 1);
 
 
-$( "body" ).mousemove(function( event ) {
-  var PadWidth = -event.pageX * <%=@shape.skew_1 * 0.0000001%>;
-  var PadHeight = -(event.pageY +500) * (event.pageX -500)* <%=@shape.skew_1 * 0.0000000001%>
-
-  ;
-  var PadSkew = (event.pageY -700)  * <%=@shape.skew_1 * 0.0000001%>;
-  console.log(PadHeight)
-  $( ".skew" ).css('-webkit-transform','matrix3d(1,'+(Math.sin(PadHeight))+',0,'+PadSkew+',0.00,1,0.002,'+PadHeight+',0,-0.02,1,'+PadHeight+',5,0,0,1)');
-});
-
-$( "body" ).mousemove(function( event ) {
-  var PadSkewM = (event.pageY*event.pageX*.000003) + 50 - (event.pageY*.002) - (event.pageX**2 *.0000002);
-  var PadSkewT = (event.pageY *.1);
-  $( ".center" ).css('width', PadSkewM + '%');
-  $( ".center" ).css('top', PadSkewT + 'px');
-});
-/*transform: matrix3d(1,0,0,<%=@shape.skew_1 * 0.0001%>,0.00,<%=@shape.skew_1 * 0.3%>,0.002, <%=@shape.skew_1 * @unit%>,0,-0.02,1,0,5,0,0,1);
--webkit-transform: matrix3d(1,0,0,<%=(@shape.skew_1**2) * 0.0001%>,0.00,1,0.002,<%=@shape.skew_1 * 0.0002%>,0,-0.02,1,0,5,0,0,1);*/
 </script>
 
 </body>
