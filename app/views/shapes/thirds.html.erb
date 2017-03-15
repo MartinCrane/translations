@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+    <style type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    /*p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 25px;
+      font-stretch: expanded;
+    }*/
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+    }
+    .sidebar {
+      background-color: #D6FCFD;;
+      height: 100%;
+      width: 5%;
+      float:left
+    }
+    .bigone {
+
+      /*margin: 0%;*/
+      width: 100%;
+      height:99vh;
+      display: block;
+      border: 1px dashed black;
+      /*padding: 50px;*/
+      /*background-color: black;*/
+      /*height: 100%;*/
+    }
+    .one {
+      font-family: 'Roboto', sans-serif;
+      /*background-color: #D6FCFD;*/
+      position: relative;
+      display: block;
+      margin-left: 5%;
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 95%;
+      height: 33%;
+      border: 4px dashed black;
+      box-sizing: border-box;
+      text-align: center;
+
+    }
+    .two {
+      font-family: 'Roboto', sans-serif;
+      /*background-color: #E1D6FD;*/
+      position: relative;
+      display: block;
+      margin-left: 5%;
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 95%;
+      height: 33%;
+      border: 4px dashed black;
+      box-sizing: border-box;
+      text-align: center;
+
+    }
+    .three {
+      font-family: 'Roboto', sans-serif;
+      /*background-color: #D6E3FD;*/
+      position: relative;
+      margin-left: 5%;
+      margin-top: 0;
+      margin-bottom: 0;
+      display: block;
+      width: 95%;
+      height: 33%;
+      border: 4px dashed black;
+      box-sizing: border-box;
+      text-align: center;
+
+    }
+    .main {
+      margin: 12px;
+      display: block;
+      width: 100%;
+    }
+
+    </style>
+    <meta charset="utf-8">
+    <title>thirds</title>
+  </head>
+    <body>
+      <div class="bigone">
+        <div class="sidebar">
+        </div>
+          <div class="one">
+            <h1>I</h1>
+          </div>
+          <div class="two">
+          <h1>Found</h1>
+          </div>
+          <div class="three">
+          <h1>It</h1>
+          </div>
+      </div>
+    </body>
+    <script>
+
+
+    $( ".sidebar" ).mousemove(function( event ) {
+      var contain = $( '.sidebar' ).height();
+      var mouse = (event.pageY/contain) * 100;
+
+      if (mouse < 44) {
+          var local_mouse = (mouse/44) * 100;
+          var top = 100 - local_mouse;
+          var mouse_one = top;
+          var mouse_two = (100 - mouse_one) * ((4+(local_mouse/100))/5);
+          var mouse_three = 100 - (mouse_one + mouse_two);
+      } else if (mouse >= 44 && mouse < 100) {
+          var local_mouse = ((mouse-44)/56) * 100;
+          var top = 100 - local_mouse;
+          var mouse_two = top;
+          var mouse_three = (100 - mouse_two) * ((4+(local_mouse/100))/5);
+          var mouse_one = (100 - (mouse_two + mouse_three));
+      } else {
+
+      }
+      // console.log("x: " + mouse_x);
+      // console.log("2: " + mouse_two);
+      // console.log(mouse_two);
+      // console.log(mouse_three);
+      $( ".one" ).css('height',+mouse_one+"%");
+      $( ".two" ).css('height',+mouse_two+"%");
+      $( ".three" ).css('height',+mouse_three+"%");
+      $( ".one" ).css('border',+((mouse_one/100)*100)+"px dashed black");
+      $( ".two" ).css('border',+((mouse_two/100)*100)+"px dashed black");
+      $( ".three" ).css('border',+((mouse_three/100)*100)+"px dashed black");
+      $( ".one" ).css('font-size',+((mouse_one/100)*200)+"px");
+      $( ".two" ).css('font-size',+((mouse_two/100)*200)+"px");
+      $( ".three" ).css('font-size',+((mouse_three/100)*200)+"px");
+    });
+
+    </script>
+</html>
