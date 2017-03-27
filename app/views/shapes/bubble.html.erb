@@ -90,7 +90,7 @@
         document.getElementById("menu").addEventListener("click", bubbler);
         function bubbler(event) {
           let element = event.target.closest("div").dataset.action
-            let message = `event.target = ${event.target} // action = element`
+            let message = `event.target = ${event.target} // action = ${element}`
             alert(message)
         }
         // stop bubbling in
